@@ -1,0 +1,95 @@
+.sidebar-container {
+    background: #007C88;
+    max-width: 25%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 80px 0;
+}
+
+.sideline {
+    width: 8px;
+    background: #FDE018;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+.sidebar-content {
+    width: 80%;
+    margin: auto;
+}
+
+.sidebar-content > h1 {
+    color: #fff;
+    font-size: 35px;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 4rem 0 0 0;
+}
+
+.progress-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.progress-container > div > h4 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.progress-container > div > p {
+    color: #D3D3D3;
+    font-size: 13px;
+    margin: 4px 0 0 0;
+}
+
+.bar-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.checked {
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unchecked {
+    background: transparent;
+    border: 2px solid #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checked > img {
+    width: 14px;
+}
+
+.unchecked > img {
+    width: 10px;
+}
+
+.line {
+    width: 1px;
+    height: 50px;
+    background: #fff;
+    margin: 4px 0;
+}
