@@ -1,7 +1,9 @@
 import React from 'react'
 import "./Home.css"
+import { useAppContext } from '../../context';
 
 const Home = () => {
+  const { getSenderEmail, handleSenderEmail, handleNavigate, error } = useAppContext();
   return (
     <div className="home-container">
       <div className="header">
@@ -16,10 +18,14 @@ const Home = () => {
           to existing address
         </p>
 
-        <form className="form-container">
-          <input type="text" />
+        <form className="form-container" onSubmit={handleNavigate}>
+          <input
+            type="text"
+            value={getSenderEmail}
+            onChange={handleSenderEmail}
+          />
           <input type="submit" value="Continue" />
-          <p className="err-msg">Please enter a valid email</p>
+          {error ? <p className="err-msg">Please enter a valid email</p> : ''}
         </form>
       </div>
     </div>
