@@ -31,7 +31,7 @@ const ContextProvider = ({ children }) => {
         setError(false);
       }, 2000);
     } else {
-      navigate("/");
+      navigate("/add-recipent");
     }
   };
   
