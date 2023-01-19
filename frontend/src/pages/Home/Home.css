@@ -8,3 +8,69 @@
     font-size: 30px;
      padding: 25px 15px;
 }
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.home-content > h2 {
+    color: #1E1E1E;
+    font-weight: 600;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.home-content > p {
+    font-size: 13px;
+    max-width: 25%;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 500px;
+    color: #848484;
+}
+
+.form-container {
+    width: 40%;
+    position: relative;
+}
+
+.form-container > input:nth-child(1) {
+    width: 100%;
+    border: 1px solid #CECECE;
+    padding: 13px 8px;
+    font-size: 15px;
+    color: #007C88;
+    font-weight: 500;
+}
+
+.form-container > input:nth-child(2) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    color: #fff;
+    width: 140px;
+    background: #007C88;
+    font-weight: 500;
+    padding: 13px;
+    border: 0;
+}
+
+.form-container > input:nth-child(1):focus {
+    outline: 0;
+    border-color: #007C88;
+    transition: all .8s linear;
+}
+
+.form-container > .err-msg {
+    color: rgba(245, 93, 93, 0.9);
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    display: none;
+}
