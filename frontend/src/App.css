@@ -1,0 +1,8 @@
+.mailbot-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.mailbot-content {
+    width: 100%;
+}
