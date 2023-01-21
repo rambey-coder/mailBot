@@ -1,14 +1,15 @@
 import { React } from "react";
 import { useAppContext } from "../../context";
 import "./AddRecipent.css";
+import { useNavigate } from "react-router-dom";
 
 import upload from "./assets/icon.svg";
 import doc from "./assets/doc.png";
 // import frame from "./assets/upload.svg";
 
 const AddRecipent = () => {
-  const { handleSelectFile, selectFile, uploadFile } = useAppContext();
-  console.log(uploadFile);
+    const { handleSelectFile, selectFile, uploadFile } = useAppContext();
+    const navigate = useNavigate();
   return (
     <>
       <div className="header">
@@ -49,7 +50,7 @@ const AddRecipent = () => {
                 <p>{uploadFile.name}</p>
                 <p>Size: {uploadFile.size}</p>
               </div>
-              <button>Proceed</button>
+              <button onClick={() => navigate("/recipent-list")}>Proceed</button>
             </div>
           </>
         )}
