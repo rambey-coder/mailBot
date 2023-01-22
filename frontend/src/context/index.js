@@ -37,12 +37,23 @@ const ContextProvider = ({ children }) => {
     }
   };
 
+  const shortenFileName = (filenameTxt) => {
+    const filename = filenameTxt;
+    const filenameLength = filename.length;
+    if (filenameLength > 20) {
+      const filenameShort = filename.substring(0, 20);
+      return `${filenameShort}...`;
+    } else {
+      return filename;
+    }
+  };
+
   const handleSelectFile = (e) => {
     selectFile.current.click();
     setUploadFile(e.target.files[0]);
   };
 
-  // console.log(uploadFile);
+  console.log(uploadFile);
 
   return (
     <AppContext.Provider
@@ -54,6 +65,7 @@ const ContextProvider = ({ children }) => {
         handleSelectFile,
         selectFile,
         uploadFile,
+        shortenFileName,
       }}
     >
       {children}

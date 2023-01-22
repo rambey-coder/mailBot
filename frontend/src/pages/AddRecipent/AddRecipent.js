@@ -8,7 +8,8 @@ import doc from "./assets/doc.png";
 // import frame from "./assets/upload.svg";
 
 const AddRecipent = () => {
-    const { handleSelectFile, selectFile, uploadFile } = useAppContext();
+    const { handleSelectFile, selectFile, uploadFile, shortenFileName } =
+      useAppContext();
     const navigate = useNavigate();
   return (
     <>
@@ -47,10 +48,12 @@ const AddRecipent = () => {
                 <img src={doc} alt="doc" />
               </div>
               <div className="comp-name">
-                <p>{uploadFile.name}</p>
-                <p>Size: {uploadFile.size}</p>
+                <p>{shortenFileName(uploadFile.name)}</p>
+                <p>Size: {uploadFile.size}kb</p>
               </div>
-              <button onClick={() => navigate("/recipent-list")}>Proceed</button>
+              <button onClick={() => navigate("/recipent-list")}>
+                Proceed
+              </button>
             </div>
           </>
         )}
