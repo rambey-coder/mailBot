@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AppContext = createContext(null);
@@ -12,6 +12,8 @@ export const useAppContext = () => {
 const ContextProvider = ({ children }) => {
   const [getSenderEmail, setgetSenderEmail] = useState("");
   const [error, setError] = useState(false);
+  const [uploadFile, setUploadFile] = useState({});
+  const selectFile = useRef();
 
   const navigate = useNavigate();
 
@@ -31,10 +33,17 @@ const ContextProvider = ({ children }) => {
         setError(false);
       }, 2000);
     } else {
-      navigate("/");
+      navigate("/add-recipent");
     }
   };
-  
+
+  const handleSelectFile = (e) => {
+    selectFile.current.click();
+    setUploadFile(e.target.files[0]);
+  };
+
+  // console.log(uploadFile);
+
   return (
     <AppContext.Provider
       value={{
@@ -42,6 +51,9 @@ const ContextProvider = ({ children }) => {
         handleSenderEmail,
         handleNavigate,
         error,
+        handleSelectFile,
+        selectFile,
+        uploadFile,
       }}
     >
       {children}
