@@ -1,9 +1,9 @@
 import React from "react";
 import "./AddRecipent.css";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const RecipentList = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
   return (
     <>
       <div className="header">
@@ -19,7 +19,7 @@ const RecipentList = () => {
               <div className="mail-list">No mails to show</div>
             </div>
           </div>
-                  <button>Proceed</button>
+                  <button onClick={navigate("/compose-message")}>Proceed</button>
                   {/* <button onClick={() => navigate(-1)}>Upload Another File</button> */}
         </div>
       </div>
